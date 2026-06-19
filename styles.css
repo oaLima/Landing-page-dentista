@@ -80,7 +80,7 @@ body {
 ========================= */
 .hero {
   position: relative;
-  background: url('imgs/planodefundo.jpeg');
+  background: url('/imgs/planodefundo.jpeg');
   background-size: cover;
   background-position: center;
 
