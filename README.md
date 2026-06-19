@@ -6,7 +6,7 @@ Landing page profissional desenvolvida com foco em conversão, ideal para clíni
 
 ## Acesse o projeto
 
-👉 https://seuusuario.github.io/landing-page-dentista/
+👉 [Entre no site](https://oalima.github.io/Landing-page-dentista/)
 
 ---
 
