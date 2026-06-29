@@ -80,7 +80,7 @@ body {
 ========================= */
 .hero {
   position: relative;
-  background: url('/imgs/planodefundo.jpeg');
+  background: url('imgs/planodefundo.jpeg');
   background-size: cover;
   background-position: center;
 
@@ -257,13 +257,31 @@ section {
   text-align: center;
 }
 
+/* Container para controlar layout responsivo das imagens */
+.results .images {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* empilha em telas menores */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Imagens responsivas: ocupa o seletor antigo e o novo (fallback) */
+.results .images img,
 .results img {
-  width: 40%;
+  flex: 1 1 300px;      /* cresce/encolhe, base 300px */
+  width: 100%;          /* largura relativa ao item */
+  max-width: 48%;       /* duas imagens lado a lado, cada uma até 48% */
+  height: auto;         /* preserva proporção */
+  aspect-ratio: 3 / 2;  /* garante caixa com proporção consistente (opcional) */
+  object-fit: cover;    /* cobre a caixa sem distorcer (pode cortar) */
   border-radius: 16px;
-  margin: 10px;
   transition: transform 0.4s;
 }
 
+.results .images img:hover,
 .results img:hover {
   transform: scale(1.05);
 }
@@ -366,8 +384,12 @@ section {
     font-size: 32px;
   }
 
+  /* imagens: cada imagem ocupa 100% no mobile (aplica ao seletor antigo e novo) */
+  .results .images img,
   .results img {
-    width: 100%;
+    max-width: 100%;
+    flex-basis: 100%;
+    aspect-ratio: auto; /* se quiser manter a proporção, remova esta linha */
   }
 
   .nav-links {
